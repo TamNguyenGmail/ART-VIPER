@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E98AB26D28E5CF9F0069714F /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98AB26C28E5CF9F0069714F /* UIImage + Extension.swift */; };
+		E98AB27728E5DC8E0069714F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98AB27528E5DC8E0069714F /* PhotoCell.swift */; };
+		E98AB27828E5DC8E0069714F /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98AB27628E5DC8E0069714F /* PhotoCell.xib */; };
+		E98AB27D28E726020069714F /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98AB27B28E726020069714F /* PictureViewController.swift */; };
+		E98AB27E28E726020069714F /* PictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E98AB27C28E726020069714F /* PictureViewController.xib */; };
+		E98AB28228E72C720069714F /* PictureTaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98AB28128E72C720069714F /* PictureTaker.swift */; };
 		E9A60AFC28DDE0A2006DC2EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A60AFB28DDE0A2006DC2EF /* AppDelegate.swift */; };
 		E9A60AFE28DDE0A2006DC2EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A60AFD28DDE0A2006DC2EF /* SceneDelegate.swift */; };
 		E9A60B0028DDE0A2006DC2EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A60AFF28DDE0A2006DC2EF /* ViewController.swift */; };
@@ -41,6 +47,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E98AB26C28E5CF9F0069714F /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		E98AB27528E5DC8E0069714F /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		E98AB27628E5DC8E0069714F /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		E98AB27B28E726020069714F /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		E98AB27C28E726020069714F /* PictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureViewController.xib; sourceTree = "<group>"; };
+		E98AB28128E72C720069714F /* PictureTaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTaker.swift; sourceTree = "<group>"; };
 		E9A60AF828DDE0A2006DC2EF /* ART-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ART-VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A60AFB28DDE0A2006DC2EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9A60AFD28DDE0A2006DC2EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +82,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E98AB26A28E5CF6B0069714F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E98AB27F28E72C570069714F /* CareTaker */,
+				E98AB27428E5DC670069714F /* Cell */,
+				E98AB26B28E5CF750069714F /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E98AB26B28E5CF750069714F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E98AB26C28E5CF9F0069714F /* UIImage + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E98AB26E28E5D3470069714F /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				E98AB26F28E5D3650069714F /* View */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		E98AB26F28E5D3650069714F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E98AB27B28E726020069714F /* PictureViewController.swift */,
+				E98AB27C28E726020069714F /* PictureViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E98AB27428E5DC670069714F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E98AB27528E5DC8E0069714F /* PhotoCell.swift */,
+				E98AB27628E5DC8E0069714F /* PhotoCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E98AB27F28E72C570069714F /* CareTaker */ = {
+			isa = PBXGroup;
+			children = (
+				E98AB28128E72C720069714F /* PictureTaker.swift */,
+			);
+			path = CareTaker;
+			sourceTree = "<group>";
+		};
 		E9A60AEF28DDE0A2006DC2EF = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +154,7 @@
 		E9A60AFA28DDE0A2006DC2EF /* ART-VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				E98AB26A28E5CF6B0069714F /* Common */,
 				E9A60B1028DDE0EF006DC2EF /* Module */,
 				E9A60B0F28DDE0C5006DC2EF /* Initialization */,
 				E9A60B0428DDE0A6006DC2EF /* Assets.xcassets */,
@@ -111,6 +176,7 @@
 		E9A60B1028DDE0EF006DC2EF /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				E98AB26E28E5D3470069714F /* Photo */,
 				E9AC64AC28E31CE00009C418 /* Login */,
 			);
 			path = Module;
@@ -206,7 +272,9 @@
 			files = (
 				E9A60B0828DDE0A6006DC2EF /* LaunchScreen.storyboard in Resources */,
 				E9A60B0528DDE0A6006DC2EF /* Assets.xcassets in Resources */,
+				E98AB27E28E726020069714F /* PictureViewController.xib in Resources */,
 				E9A60B0328DDE0A2006DC2EF /* Main.storyboard in Resources */,
+				E98AB27828E5DC8E0069714F /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,9 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98AB28228E72C720069714F /* PictureTaker.swift in Sources */,
 				E9A60B0028DDE0A2006DC2EF /* ViewController.swift in Sources */,
+				E98AB26D28E5CF9F0069714F /* UIImage + Extension.swift in Sources */,
 				E9A60AFC28DDE0A2006DC2EF /* AppDelegate.swift in Sources */,
 				E9A60AFE28DDE0A2006DC2EF /* SceneDelegate.swift in Sources */,
+				E98AB27D28E726020069714F /* PictureViewController.swift in Sources */,
+				E98AB27728E5DC8E0069714F /* PhotoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
