@@ -27,6 +27,8 @@
 		E9AC64CC28E329B70009C418 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC64B628E31F1A0009C418 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9AC64CD28E329BB0009C418 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC64B928E31F210009C418 /* RxSwift.xcframework */; };
 		E9AC64CE28E329BB0009C418 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9AC64B928E31F210009C418 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9CC1A7528EF114D0042480E /* PHPhotoLibrary + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC1A7428EF114D0042480E /* PHPhotoLibrary + Extension.swift */; };
+		E9CC1A7728EF15490042480E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC1A7628EF15490042480E /* UIViewController + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +67,8 @@
 		E9AC64B328E31F160009C418 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = ../Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		E9AC64B628E31F1A0009C418 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = ../Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
 		E9AC64B928E31F210009C418 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = ../Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		E9CC1A7428EF114D0042480E /* PHPhotoLibrary + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary + Extension.swift"; sourceTree = "<group>"; };
+		E9CC1A7628EF15490042480E /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				E98AB26C28E5CF9F0069714F /* UIImage + Extension.swift */,
+				E9CC1A7428EF114D0042480E /* PHPhotoLibrary + Extension.swift */,
+				E9CC1A7628EF15490042480E /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -310,9 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98AB28228E72C720069714F /* PictureTaker.swift in Sources */,
+				E9CC1A7728EF15490042480E /* UIViewController + Extension.swift in Sources */,
 				E9A60B0028DDE0A2006DC2EF /* ViewController.swift in Sources */,
 				E98AB26D28E5CF9F0069714F /* UIImage + Extension.swift in Sources */,
 				E9A60AFC28DDE0A2006DC2EF /* AppDelegate.swift in Sources */,
+				E9CC1A7528EF114D0042480E /* PHPhotoLibrary + Extension.swift in Sources */,
 				E9A60AFE28DDE0A2006DC2EF /* SceneDelegate.swift in Sources */,
 				E98AB27D28E726020069714F /* PictureViewController.swift in Sources */,
 				E98AB27728E5DC8E0069714F /* PhotoCell.swift in Sources */,

@@ -21,14 +21,15 @@ class ViewController: UIViewController {
     // MARK: - Properties
     private let bag = DisposeBag()
     private let images = BehaviorRelay<[UIImage]>(value: [])
-    
+    private var imageCache = [Int]()
+
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.implementRx()
     }
 
-    // MARK: - Functions
+    // MARK: - Rx
     private func implementRx() {
         self.addItemButton.rx.tap.subscribe { [weak self] _ in
             guard let this = self, let personImage = UIImage(systemName: "person.crop.circle.fill") else { return }
@@ -56,17 +57,51 @@ class ViewController: UIViewController {
             guard let this = self else { return }
             
             let targetVC = PictureViewController()
-            targetVC.selectedPhotos.subscribe(onNext: { newImage in
-                
-                this.images.accept(this.images.value + [newImage])
-                    
-            }).disposed(by: this.bag)
+            let newPhotos = targetVC.selectedPhotos.share()
+            
+            newPhotos.take(while: { [weak self] image in
+                guard let this = self else { return false }
+
+                let count = this.images.value.count
+                return count < 6
+            })
+            .filter { newImage in
+                return newImage.size.width > newImage.size.height
+            }
+            .filter{ [weak self] newImage in
+                guard let this = self else { return false }
+
+                let len = newImage.pngData()?.count ?? 0
+                guard this.imageCache.contains(len) == false else {
+                    return false
+                }
+                this.imageCache.append(len)
+                return true
+            }
+            .subscribe(
+                onNext: { [weak self] newImage in
+                    guard let this = self else { return }
+                    let images = this.images
+                  images.accept(images.value + [newImage])
+                },
+                onDisposed: {
+                  print("completed photo selection")
+                }
+              )
+              .disposed(by: this.bag)
+
+            newPhotos
+              .ignoreElements()
+              .subscribe(onCompleted: { [weak self] in
+                self?.updateNavigationIcon()
+              })
+              .disposed(by: this.bag)
             
             this.navigationController?.pushViewController(targetVC, animated: true)
             
         }.disposed(by: self.bag)
         
-        self.images.subscribe { [weak self] photos in
+        self.images.asObservable().throttle(.seconds(Int(0.5)), scheduler: MainScheduler.instance).subscribe { [weak self] photos in
             guard let this = self, let photos = photos.element else { return }
 
             this.iconImageView.image = photos.collage(size: this.iconImageView.frame.size)
@@ -75,11 +110,17 @@ class ViewController: UIViewController {
         
     }
     
+    // MARK: - Helpers
     private func updateUI(photos: [UIImage]) {
         self.saveButton.isEnabled = photos.count > 0 && photos.count % 2 == 0
         self.clearButton.isEnabled = photos.count > 0
         self.addItemButton.isEnabled = photos.count < 6
         self.title = photos.count > 0 ? "\(photos.count) photos" : "Collage"
+    }
+    
+    private func updateNavigationIcon() {
+      let icon = iconImageView.image?.scaled(CGSize(width: 22, height: 22)).withRenderingMode(.alwaysOriginal)
+      navigationItem.leftBarButtonItem = UIBarButtonItem(image: icon, style: .done, target: nil, action: nil)
     }
 
 }
