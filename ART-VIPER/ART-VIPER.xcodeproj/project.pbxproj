@@ -32,6 +32,9 @@
 		E9B434D228FAA445008BE94E /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9B434D028FAA445008BE94E /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9B434D428FAA44C008BE94E /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B434D328FAA44C008BE94E /* RealmSwift.xcframework */; };
 		E9B434D528FAA44C008BE94E /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9B434D328FAA44C008BE94E /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9B434D828FAA581008BE94E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B434D728FAA581008BE94E /* User.swift */; };
+		E9BC85C328FAF20300DCC29C /* RxRealm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BC85C228FAF20300DCC29C /* RxRealm.xcframework */; };
+		E9BC85C428FAF20300DCC29C /* RxRealm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9BC85C228FAF20300DCC29C /* RxRealm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E9CC1A7528EF114D0042480E /* PHPhotoLibrary + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC1A7428EF114D0042480E /* PHPhotoLibrary + Extension.swift */; };
 		E9CC1A7728EF15490042480E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CC1A7628EF15490042480E /* UIViewController + Extension.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,7 @@
 				E9AC64CC28E329B70009C418 /* RxRelay.xcframework in Embed Frameworks */,
 				E9B434D528FAA44C008BE94E /* RealmSwift.xcframework in Embed Frameworks */,
 				E9AC64CE28E329BB0009C418 /* RxSwift.xcframework in Embed Frameworks */,
+				E9BC85C428FAF20300DCC29C /* RxRealm.xcframework in Embed Frameworks */,
 				E9AC64C728E329B00009C418 /* RxBlocking.xcframework in Embed Frameworks */,
 				E9AC64CA28E329B40009C418 /* RxCocoa.xcframework in Embed Frameworks */,
 				E9B434D228FAA445008BE94E /* Realm.xcframework in Embed Frameworks */,
@@ -77,6 +81,8 @@
 		E9B434CA28F44E54008BE94E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E9B434D028FAA445008BE94E /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = ../Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		E9B434D328FAA44C008BE94E /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = ../Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		E9B434D728FAA581008BE94E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E9BC85C228FAF20300DCC29C /* RxRealm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRealm.xcframework; path = ../Carthage/Build/RxRealm.xcframework; sourceTree = "<group>"; };
 		E9CC1A7428EF114D0042480E /* PHPhotoLibrary + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary + Extension.swift"; sourceTree = "<group>"; };
 		E9CC1A7628EF15490042480E /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +95,7 @@
 				E9AC64CB28E329B70009C418 /* RxRelay.xcframework in Frameworks */,
 				E9B434D428FAA44C008BE94E /* RealmSwift.xcframework in Frameworks */,
 				E9AC64CD28E329BB0009C418 /* RxSwift.xcframework in Frameworks */,
+				E9BC85C328FAF20300DCC29C /* RxRealm.xcframework in Frameworks */,
 				E9AC64C628E329B00009C418 /* RxBlocking.xcframework in Frameworks */,
 				E9AC64C928E329B40009C418 /* RxCocoa.xcframework in Frameworks */,
 				E9B434D128FAA445008BE94E /* Realm.xcframework in Frameworks */,
@@ -221,6 +228,7 @@
 		E9AC64AE28E31F0F0009C418 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9BC85C228FAF20300DCC29C /* RxRealm.xcframework */,
 				E9B434D328FAA44C008BE94E /* RealmSwift.xcframework */,
 				E9B434D028FAA445008BE94E /* Realm.xcframework */,
 				E9AC64B928E31F210009C418 /* RxSwift.xcframework */,
@@ -234,9 +242,18 @@
 		E9B434C928F44E46008BE94E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9B434D628FAA535008BE94E /* Realm */,
 				E9B434CA28F44E54008BE94E /* Event.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E9B434D628FAA535008BE94E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				E9B434D728FAA581008BE94E /* User.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +341,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.xcframework",
 				"$(SRCROOT)/$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -350,6 +368,7 @@
 				E9A60AFE28DDE0A2006DC2EF /* SceneDelegate.swift in Sources */,
 				E98AB27D28E726020069714F /* PictureViewController.swift in Sources */,
 				E98AB27728E5DC8E0069714F /* PhotoCell.swift in Sources */,
+				E9B434D828FAA581008BE94E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
