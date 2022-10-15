@@ -30,7 +30,8 @@ final private class PickerViewDataSourceNotSet: NSObject, UIPickerViewDataSource
 /// For more information take a look at `DelegateProxyType`.
 public class RxPickerViewDataSourceProxy
     : DelegateProxy<UIPickerView, UIPickerViewDataSource>
-    , DelegateProxyType {
+    , DelegateProxyType
+    , UIPickerViewDataSource {
 
     /// Typed parent object.
     public weak private(set) var pickerView: UIPickerView?
@@ -48,16 +49,8 @@ public class RxPickerViewDataSourceProxy
 
     private weak var _requiredMethodsDataSource: UIPickerViewDataSource? = pickerViewDataSourceNotSet
 
-    /// For more information take a look at `DelegateProxyType`.
-    public override func setForwardToDelegate(_ forwardToDelegate: UIPickerViewDataSource?, retainDelegate: Bool) {
-        _requiredMethodsDataSource = forwardToDelegate ?? pickerViewDataSourceNotSet
-        super.setForwardToDelegate(forwardToDelegate, retainDelegate: retainDelegate)
-    }
-}
+    // MARK: UIPickerViewDataSource
 
-// MARK: UIPickerViewDataSource
-
-extension RxPickerViewDataSourceProxy: UIPickerViewDataSource {
     /// Required delegate method implementation.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         (_requiredMethodsDataSource ?? pickerViewDataSourceNotSet).numberOfComponents(in: pickerView)
@@ -66,6 +59,12 @@ extension RxPickerViewDataSourceProxy: UIPickerViewDataSource {
     /// Required delegate method implementation.
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         (_requiredMethodsDataSource ?? pickerViewDataSourceNotSet).pickerView(pickerView, numberOfRowsInComponent: component)
+    }
+    
+    /// For more information take a look at `DelegateProxyType`.
+    public override func setForwardToDelegate(_ forwardToDelegate: UIPickerViewDataSource?, retainDelegate: Bool) {
+        _requiredMethodsDataSource = forwardToDelegate ?? pickerViewDataSourceNotSet
+        super.setForwardToDelegate(forwardToDelegate, retainDelegate: retainDelegate)
     }
 }
 

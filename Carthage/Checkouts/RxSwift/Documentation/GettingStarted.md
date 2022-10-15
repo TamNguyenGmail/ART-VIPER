@@ -159,7 +159,7 @@ In case we have something like:
 
 ```swift
 let subscription = Observable<Int>.interval(.milliseconds(300), scheduler: scheduler)
-            .observe(on: MainScheduler.instance)
+            .observeOn(MainScheduler.instance)
             .subscribe { event in
                 print(event)
             }
@@ -176,7 +176,7 @@ Also, in this case:
 
 ```swift
 let subscription = Observable<Int>.interval(.milliseconds(300), scheduler: scheduler)
-            .observe(on: MainScheduler.instance)
+            .observeOn(serialScheduler)
             .subscribe { event in
                 print(event)
             }
@@ -211,7 +211,7 @@ Additional way to automatically dispose subscription on dealloc is to use `takeU
 
 ```swift
 sequence
-    .take(until: self.rx.deallocated)
+    .takeUntil(self.rx.deallocated)
     .subscribe {
         print($0)
     }
